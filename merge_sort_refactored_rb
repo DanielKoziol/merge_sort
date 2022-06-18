@@ -1,0 +1,24 @@
+arr = [3,1,5,4,6,2,7]
+
+def merge_sort(arr)
+
+if arr.length <= 1
+  arr
+  
+else
+a = merge_sort(arr.shift((arr.length/2).floor))
+b = !arr.nil? ? merge_sort(arr) : []
+  p "else"
+  p "#{a} i #{b}"
+c = []
+  
+   while !a[0].nil? && !b[0].nil? do
+    c.push(a[0] < b[0] ? a.shift : b.shift)
+   end
+  
+  c.concat(a).concat(b) 
+  p c
+end
+end
+
+p merge_sort(arr)
